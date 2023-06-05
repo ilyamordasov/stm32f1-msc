@@ -63,8 +63,8 @@
   */
 
 #define STORAGE_LUN_NBR                  1
-#define STORAGE_BLK_NBR                  0x8000
-#define STORAGE_BLK_SIZ                  0x200
+#define STORAGE_BLK_NBR                  4096
+#define STORAGE_BLK_SIZ                  4096
 
 /* USER CODE BEGIN PRIVATE_DEFINES */
 //uint8_t buffer[STORAGE_BLK_NBR * STORAGE_BLK_SIZ];
@@ -233,7 +233,7 @@ int8_t STORAGE_IsWriteProtected_FS(uint8_t lun)
 int8_t STORAGE_Read_FS(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t blk_len)
 {
   /* USER CODE BEGIN 6 */
-	W25qxx_ReadPage(buf, blk_addr, 0, 256);
+	W25qxx_ReadSector(buf, blk_addr, 0, 4096);
 	return (USBD_OK);
   /* USER CODE END 6 */
 }

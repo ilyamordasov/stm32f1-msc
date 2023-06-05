@@ -231,7 +231,7 @@ bool W25qxx_Init(void)
 	W25qxx_ReadStatusRegister(1);
 	W25qxx_ReadStatusRegister(2);
 	W25qxx_ReadStatusRegister(3);
-#if (_W25QXX_DEBUG == 1)
+#if (_W25QXX_DEBUG == 0)
 	printf("w25qxx Page Size: %d Bytes\r\n", w25qxx.PageSize);
 	printf("w25qxx Page Count: %ld\r\n", w25qxx.PageCount);
 	printf("w25qxx Sector Size: %ld Bytes\r\n", w25qxx.SectorSize);

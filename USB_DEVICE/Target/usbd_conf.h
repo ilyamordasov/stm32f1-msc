@@ -66,13 +66,13 @@
 /*---------- -----------*/
 #define USBD_MAX_NUM_CONFIGURATION     1
 /*---------- -----------*/
-#define USBD_MAX_STR_DESC_SIZ     512
+#define USBD_MAX_STR_DESC_SIZ     4096U
 /*---------- -----------*/
 #define USBD_DEBUG_LEVEL     0
 /*---------- -----------*/
 #define USBD_SELF_POWERED     1
 /*---------- -----------*/
-#define MSC_MEDIA_PACKET     512
+#define MSC_MEDIA_PACKET     4096U
 
 /****************************************/
 /* #define for FS and HS identification */
