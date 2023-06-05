@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -57,9 +57,15 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_Pin GPIO_PIN_13
+#define LED_GPIO_Port GPIOC
+#define SPI1_CS_Pin GPIO_PIN_4
+#define SPI1_CS_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
-
+bool SDCardReadSect(uint8_t* bufferOut, uint32_t sector, uint16_t count);
+bool SDCardWriteSect(uint8_t* bufferOut, uint32_t sector, uint16_t count);
+uint32_t SDCardSectorCount();
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
